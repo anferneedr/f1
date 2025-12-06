@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            color: white;
+            background-image: url('/Background-2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .f1-header {
+            background-color: #15151e;
+            padding: 10px 20px;
+        }
+        .f1-header .nav-link {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 20px;
+        }
+        .f1-logo {
+            height: 30px;
+            margin-right: 20px;
+        }
+        .main{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .welcome{
+            font-size:4rem;
+            font-weight: bold;
+        }
+        .btn-group {
+            margin: 0 10px;
+        }
+        .btn{
+            border: 2px solid #15151e;
+            background-color: #15151e;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+<header class="f1-header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <a th:href="@{/}"><img src="/Logo.png" alt="F1 Logo" class="f1-logo"></a>
+    </div>
+    <nav class="d-flex">
+        <a class="nav-link" href="/list">Schedule</a>
+        <a class="nav-link" href="https://www.formula1.com/en/results/2025/races">Results</a>
+        <a class="nav-link" href="https://www.formula1.com/en/latest">News</a>
+        <a class="nav-link" href="https://www.formula1.com/en/drivers">Drivers</a>
+    </nav>
+</header>
+<div class="main">
+    <div class="container">
+        <h1 th:text="${message}" class="welcome mb-4">Wel!</h1>
+        <p class="fs-5 mb-4">It's lights out and away we go.</p>
+        <div class="btn-group">
+            <a href="/list" class="btn btn-primary me-3">View Race List</a>
+            <a href="/create" class="btn btn-success">Add New Race</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
